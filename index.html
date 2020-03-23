@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/dist/css/styles.css">
+    
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.js"></script>
+    <script defer type="text/javascript" src="/js/index.js"></script>
+</head>
+<body>
+    <svg>
+        <filter id="distortion">
+            <feTurbulence baseFrequency="0.03 0.16" type="fractalNoise" seed="200" numOctaves="2" />
+            <feGaussianBlur stdDeviation="1" />
+            <feDisplacementMap in="SourceGraphic" xChannelSelector="R" yChannelSelector="B" scale="23.5" />
+            <feGaussianBlur stdDeviation="0.45" />
+        </filter>
+
+    
+        <filter>
+            <feTurbulence id="turbulence" type="turbulence" baseFrequency="0" numOctaves="1" result="turbulence" seed="5">
+                <!-- <animate id="noiseAnimate" ,="," attributeName="baseFrequency" values="0; 0.04; 0.02" calcMode="spline" keySplines="0.42 0.0 0.58 1.0;0.42 0.0 0.58 1.0" dur="15s" repeatCount="indefinite"></animate> -->
+              </feTurbulence>
+              <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="B"></feDisplacementMap>
+        </filter>
+
+
+        <!-- id="distortion" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB" -->
+        <filter >
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.06" numOctaves="1" result="warp"></feTurbulence>    
+            <feOffset dx="-90" result="warpOffset"></feOffset>
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset"></feDisplacementMap>
+        </filter>
+
+
+        <filter id="distortion2" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0 0.14" numOctaves="1" seed="9" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"/>
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="103" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap"/>
+        </filter>
+    </svg>
+    <div class="contact-nag">
+        <p class="contact-nag__para">let's voom before you move</p>
+        <a href="" class="contact-nag__cta">contact us</a>
+        <div class="contact-nag__soc-nets">
+            <a href="" class="contact-nag__soc-net-link"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecfe955fc32d065fdced3c_email%20logo.svg" alt="" class="contact-nag__soc-net-img"></a>
+            <a href="" class="contact-nag__soc-net-link"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6068cdd0a64ba36e092_Facebook_logo.svg" alt="" class="contact-nag__soc-net-img"></a>
+            <a href="" class="contact-nag__soc-net-link"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6068cdd0a04ec36e093_LinkedIn_logo.svg" alt="" class="contact-nag__soc-net-img"></a>
+            <a href="" class="contact-nag__soc-net-link"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6075abdf61c9f5a37dd_Twitter_logo.svg" alt="" class="contact-nag__soc-net-img"></a>
+        </div>
+    </div>
+    <div class="slider">
+        <div class="slider__slide-holder">
+            <div class="slider__bg slider__bg--0"></div>
+            <div class="slider__bg slider__bg--1"></div>
+            <div class="slider__bg slider__bg--2"></div>
+        </div>
+    </div>
+    <div class="header">
+        <ul class="header__nav">
+            <li class="header__nav-item"><a href="#" class="header__nav-link">solutions</a></li>
+            <li class="header__nav-item"><a href="#" class="header__nav-link">technology</a></li>
+            <li class="header__nav-item"><a href="#" class="header__nav-link">investors</a></li>
+            <li class="header__nav-item"><a href="#" class="header__nav-link">careers</a></li>
+            <li class="header__nav-item"><a href="#" class="header__nav-link">contact</a></li>
+        </ul>
+        <h1 class="header__title">
+            <span class="header__main-title">zoom</span>
+            <span class="header__sub-title">abhorance with a groove</span>
+        </h1>
+    </div>
+    <div class="concept">
+        <div class="concept__phone">
+            <div class="concept__phone-shadow"></div>
+            <div class="concept__phone-screen">
+                <div class="concept__phone-betty"></div>
+                <div class="concept__phone-testimonial">
+                    A one of a kind experience I will never forget.
+                    <span>
+                        -Betty White
+                    </span>
+                </div>
+            </div>
+        </div>
+        <h2 class="concept__title">On-Demand Insurance
+            for Everything You Can
+            Ride, Fly or Sail</h2>
+        <div class="concept__stripe"></div>
+        <p class="concept__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum voluptas odit aliquid id officia nam harum tenetur ducimus libero magnam. Nesciunt iure non assumenda doloremque quam dolorum distinctio eum, at architecto praesentium a asperiores quidem temporibus consequuntur impedit facere dolore nostrum consequatur cum maxime nemo quos itaque sequi. Beatae, quos?</p>
+    </div>
+    <div class="solutions">
+        <h2 class="solutions__title">our endruance solutions</h2>
+        <p class="solutions__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos cumque quaerat soluta suscipit iusto corrupti accusamus rerum, delectus laudantium, labore quisquam saepe impedit, quas eum tenetur doloribus facere. Voluptates recusandae quos incidunt inventore saepe deleniti accusamus maxime est vitae vero! Dignissimos molestiae, hic quaerat saepe iste eveniet excepturi magni voluptas nihil reiciendis id adipisci doloremque necessitatibus cum itaque blanditiis. Veniam deleniti soluta quos nostrum libero, iure debitis natus repellat delectus quasi necessitatibus, ipsum quisquam ducimus obcaecati reprehenderit laboriosam. Minus obcaecati quas, beatae placeat earum qui, ratione natus facilis quam excepturi voluptatibus ex ea at sapiente doloremque vero. Incidunt, ut!</p>
+        <div class="solutions__solutions">
+            <div class="solutions__solution">
+                <!-- <img src="https://lh3.googleusercontent.com/proxy/BEAPDF5KzCO_jdSf6hs8-LKDydoWJPCa-krJiIHZkRoP716affh3z1ItGGhPJV02eaFXEiHyIw3PelK1dWxhBB1_3kX4pb_U4vKveEFoQgoiaXp0EGfaJH8pyNLDhUVIpN8xbN4xdw" class="solutions__solution-img"/> -->
+                <h3 class="solutions__solution-title">hello</h3>
+                <a href="" class="solutions__solution-cta">try</a>
+            </div>
+            <div class="solutions__solution">
+                <!-- <img src="https://lh3.googleusercontent.com/proxy/BEAPDF5KzCO_jdSf6hs8-LKDydoWJPCa-krJiIHZkRoP716affh3z1ItGGhPJV02eaFXEiHyIw3PelK1dWxhBB1_3kX4pb_U4vKveEFoQgoiaXp0EGfaJH8pyNLDhUVIpN8xbN4xdw" class="solutions__solution-img"/> -->
+                <h3 class="solutions__solution-title">hello</h3>
+                <a href="" class="solutions__solution-cta">try</a>
+            </div>
+            <div class="solutions__solution">
+                <!-- <img src="https://lh3.googleusercontent.com/proxy/BEAPDF5KzCO_jdSf6hs8-LKDydoWJPCa-krJiIHZkRoP716affh3z1ItGGhPJV02eaFXEiHyIw3PelK1dWxhBB1_3kX4pb_U4vKveEFoQgoiaXp0EGfaJH8pyNLDhUVIpN8xbN4xdw" class="solutions__solution-img"/> -->
+                <h3 class="solutions__solution-title">hello</h3>
+                <a href="" class="solutions__solution-cta">try</a>
+            </div>
+        </div>
+    </div>
+    <div class="the-way">
+        <h2 class="the-way__title">how it works</h2>
+        <p class="the-way__desc">VOOM’s end-to-end InsurTech platform is disrupting the entire insurance value chain - from risk analysis through policy management all the way to the end customer using our sophisticated distribution technology</p>
+        <div class="the-way__graph-top">
+            <div class="the-way__umbrelas">
+                <img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cdee7ea3f00ec75b4af2895_Group%2035.svg" alt="" class="the-way__umbrela">
+                <img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cdee7ea3f00ec75b4af2895_Group%2035.svg" alt="" class="the-way__umbrela">
+                <img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cdee7ea3f00ec75b4af2895_Group%2035.svg" alt="" class="the-way__umbrela">
+            </div>
+            <h3 class="the-way__graph-top-title">insurance carriers</h3>
+        </div>
+        <div class="the-way__graph">
+            <div class="the-way__graph-section">
+                <div class="the-way__graph-chart">
+                </div>
+                <div class="the-way__graph-line the-way__graph-line--0"></div>
+                <div class="the-way__graph-stage">
+                    <span class="the-way__graph-stage-num">1</span>
+                    <span class="the-way__graph-stage-name">Risk Analytics Engine</span>
+                </div>
+            </div>
+            <div class="the-way__graph-section">
+                <div class="the-way__graph-stage">
+                    
+                    <span class="the-way__graph-stage-num">2</span>
+                    <span class="the-way__graph-stage-name">Next Generation Policy Management</span>
+                </div>
+                <div class="the-way__graph-line the-way__graph-line--1"></div>
+                <div class="the-way__graph-chart"></div>
+            </div>
+            <div class="the-way__graph-section">
+                <div class="the-way__graph-chart"></div>
+                <div class="the-way__graph-line the-way__graph-line--2"></div>
+                <div class="the-way__graph-stage">
+                    
+                    <span class="the-way__graph-stage-num">3</span>
+                    <span class="the-way__graph-stage-name">Effective Distribution and Engagement</span>
+                    </div>
+            </div>
+        </div>
+        <div class="the-way__graph-bottom">
+            <img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5ce2c5c08eff8b49a60e1a3b_customers%402x.svg" alt="" class="the-way__group">
+            <h3 class="the-way__graph-bottom-title">safer customers</h3>
+        </div>
+    </div>
+    <div class="featured">
+        <h2 class="featured__title">Featured In</h2>
+        <div class="featured__feats">
+            <div class="featured__feat"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5ceced2d38469ca30ab23710_DT_Logo.png" alt="" class="featured__img"></div>
+            <div class="featured__feat"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5ceced2e5fc32d9621dc992a_Forbes_Logo.png" alt="" class="featured__img"></div>
+            <div class="featured__feat"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5ceced2e38469c4e58b23711_VB_Logo.png" alt="" class="featured__img"></div>
+            <div class="featured__feat"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5d1336857a7a1a3149f42fbd_foxbusines.png" alt="" class="featured__img"></div>
+            <div class="featured__feat"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5ceced2e7a0da8e68f6e4f5b_NYT_Logo.png" alt="" class="featured__img"></div>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="contact__title"></div>
+        <div class="contact__form-container"></div>
+        <div class="contact__soc-nets">
+            <a href="" class="contact__soc-net-link"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecfe955fc32d065fdced3c_email%20logo.svg" alt="" class="contact__soc-net-img"></a>
+            <a href="" class="contact__soc-net-link"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6068cdd0a64ba36e092_Facebook_logo.svg" alt="" class="contact__soc-net-img"></a>
+            <a href="" class="contact__soc-net-link"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6068cdd0a04ec36e093_LinkedIn_logo.svg" alt="" class="contact__soc-net-img"></a>
+            <a href="" class="contact__soc-net-link"><img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6075abdf61c9f5a37dd_Twitter_logo.svg" alt="" class="contact__soc-net-img"></a>
+        </div>
+    </div>
+    <!-- <div class="fold">
+            <div class="fold__title-container">
+                <h1 class="fold__title">
+                    <span class="fold__title-piece">a
+w
+e</span>
+                    <span class="fold__title-piece">inspiring</span>
+                    <span class="fold__title-piece">artworks</span>
+                    <span class="fold__title-piece">just for the heck of it</span>
+                </h1>
+            </div>
+            <ul class="fold__nav">
+                <li class="fold__nav-item"><a href="#" class="fold__nav-link">Our Story</a></li>
+                <li class="fold__nav-item"><a href="#" class="fold__nav-link">Services</a></li>
+                <li class="fold__nav-item"><a href="#" class="fold__nav-link">Firs</a></li>
+                <li class="fold__nav-item"><a href="#" class="fold__nav-link">Contact Us</a></li>
+            </ul>
+            <div class="fold__nav-drop">
+                <p class="fold__nav-drop-desc fold__nav-drop-desc--0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, nesciunt molestiae? Quo adipisci suscipit consectetur tempore voluptatum? Impedit exercitationem, corporis amet laborum sequi eos animi corrupti repudiandae ab culpa. Saepe dolorem enim doloribus tenetur maiores iusto illum, sapiente cum unde aliquid quasi. Ducimus, libero deleniti doloremque assumenda, nam ipsum possimus quae nisi delectus ullam sunt non commodi quaerat laboriosam ipsa quia, maxime ratione dignissimos nulla?</p>
+                <p class="fold__nav-drop-desc fold__nav-drop-desc--1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, nesciunt molestiae? Quo adipisci suscipit consectetur tempore voluptatum? Impedit exercitationem, corporis amet laborum sequi eos animi corrupti repudiandae ab culpa. Saepe dolorem enim doloribus tenetur maiores iusto illum, sapiente cum unde aliquid quasi. Ducimus, libero deleniti doloremque assumenda, nam ipsum possimus quae nisi delectus ullam sunt non commodi quaerat laboriosam ipsa quia, maxime ratione dignissimos nulla?</p>
+                <p class="fold__nav-drop-desc fold__nav-drop-desc--2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, nesciunt molestiae? Quo adipisci suscipit consectetur tempore voluptatum? Impedit exercitationem, corporis amet laborum sequi eos animi corrupti repudiandae ab culpa. Saepe dolorem enim doloribus tenetur maiores iusto illum, sapiente cum unde aliquid quasi. Ducimus, libero deleniti doloremque assumenda, nam ipsum possimus quae nisi delectus ullam sunt non commodi quaerat laboriosam ipsa quia, maxime ratione dignissimos nulla?</p>
+                <p class="fold__nav-drop-desc fold__nav-drop-desc--3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, nesciunt molestiae? Quo adipisci suscipit consectetur tempore voluptatum? Impedit exercitationem, corporis amet laborum sequi eos animi corrupti repudiandae ab culpa. Saepe dolorem enim doloribus tenetur maiores iusto illum, sapiente cum unde aliquid quasi. Ducimus, libero deleniti doloremque assumenda, nam ipsum possimus quae nisi delectus ullam sunt non commodi quaerat laboriosam ipsa quia, maxime ratione dignissimos nulla?</p>
+            </div>
+    </div> -->
+    
+</body>
+</html>
