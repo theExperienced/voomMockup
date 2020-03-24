@@ -1,3 +1,5 @@
+const header = document.querySelector('.header');
+
 const contact = document.querySelector('.contact');
 const contactNag = document.querySelector('.contact-nag');
 // const foldNavDropItems = document.querySelectorAll('.fold__nav-drop-item');
@@ -39,9 +41,9 @@ tl.to(slideHolder, 1, {x: "-=100vw", delay: 5, ease: Power1.easeOut}).to(slideHo
 
 // myAnimation.eventCallback("onComplete", , ["param1","param2"]);
 
-const contactObserver = new IntersectionObserver(([contactSection]) => {
-    console.log(contactSection)
-    if (contactSection.intersectionRatio > 0) {
+const headerObserver = new IntersectionObserver(([header]) => {
+    console.log(header)
+    if (header.intersectionRatio > 0) {
         contactNag.classList.remove('visible');
     } else {
         contactNag.classList.add('visible');
@@ -50,4 +52,14 @@ const contactObserver = new IntersectionObserver(([contactSection]) => {
     
   });
 
-  contactObserver.observe(contact, {threshhold: 0});
+  headerObserver.observe(header, {threshhold: 1});
+
+const contactObserver = new IntersectionObserver(([contactSection]) => {
+    if (contactSection.intersectionRatio > 0) {
+        contactNag.classList.remove('visible');
+    } else {
+        contactNag.classList.add('visible');
+    }
+  });
+
+contactObserver.observe(contact, {threshhold: 0});
