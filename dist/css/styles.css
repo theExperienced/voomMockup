@@ -113,6 +113,9 @@ svg {
 
 @media only screen and (max-width: 25em) {
   .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     -webkit-transform: translateY(-100%);
         -ms-transform: translateY(-100%);
             transform: translateY(-100%);
@@ -128,6 +131,7 @@ svg {
     -webkit-align-items: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.45), 0 3rem 3.5rem rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -257,6 +261,26 @@ svg {
   transition: opacity 0s 0.2s, width 0.15s 0.08s cubic-bezier(0.72, 2, 0.54, 0.5), -webkit-transform 0.2s 0.1s ease-out;
   transition: opacity 0s 0.2s, width 0.15s 0.08s cubic-bezier(0.72, 2, 0.54, 0.5), transform 0.2s 0.1s ease-out;
   transition: opacity 0s 0.2s, width 0.15s 0.08s cubic-bezier(0.72, 2, 0.54, 0.5), transform 0.2s 0.1s ease-out, -webkit-transform 0.2s 0.1s ease-out;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__item:not(:last-child)::after {
+  position: absolute;
+  content: '';
+  width: 3rem;
+  height: 1px;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  width: 7rem;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.17);
 }
 
 .nav__item:last-child {
@@ -716,6 +740,15 @@ svg {
   grid-column-gap: 15rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .the-way__graph-section {
+    grid-template-columns: .8rem 1fr;
+    grid-template-rows: 1fr 1.3fr;
+    grid-column-gap: 8rem;
+    overflow: hidden;
+  }
+}
+
 .the-way__graph-stage {
   display: grid;
   justify-items: center;
@@ -723,6 +756,12 @@ svg {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media only screen and (max-width: 25em) {
+  .the-way__graph-stage {
+    grid-column: 2 / 3;
+  }
 }
 
 .the-way__graph-stage-num {
@@ -747,22 +786,41 @@ svg {
   width: 100%;
 }
 
+@media only screen and (max-width: 25em) {
+  .the-way__graph-line {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+}
+
 .the-way__graph-line::after {
   position: absolute;
   content: '';
-  width: 9rem;
-  height: 9rem;
+  width: 5rem;
+  height: 5rem;
   left: 50%;
   bottom: 0;
-  border: 1.2rem solid #5743af;
+  border: 0.85rem solid #5743af;
+  padding: 1.5rem;
   background-color: white;
   background-repeat: no-repeat;
-  background-position: center;
+  background-origin: content-box;
+  background-position: -15% 0;
+  background-size: contain;
+  box-shadow: inset -2rem 0 3rem -1rem rgba(0, 0, 0, 0.1), inset -3rem 0 3rem -1rem rgba(0, 0, 0, 0.1);
   bottom: 50%;
   border-radius: 100px;
   -webkit-transform: translate(-50%, 50%);
       -ms-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
+  z-index: 1;
+}
+
+@media only screen and (max-width: 25em) {
+  .the-way__graph-line::after {
+    border-radius: 0 100px 100px 0;
+    left: 6.5%;
+  }
 }
 
 .the-way__graph-line--0 {
@@ -789,6 +847,13 @@ svg {
   margin: 5rem 0;
   width: 100%;
   box-shadow: 0 3rem 6rem 1px rgba(0, 0, 0, 0.06);
+}
+
+@media only screen and (max-width: 25em) {
+  .the-way__graph-chart {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
 }
 
 .the-way__graph-bottom-title {
