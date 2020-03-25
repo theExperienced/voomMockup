@@ -13,17 +13,18 @@ const contactNag = document.querySelector('.contact-nag');
 //     });
 // });
 
-const slideHolder = document.querySelector('.slider__slide-holder');
+if (window.innerWidth >= 1000 ) {
+    const slideHolder = document.querySelector('.slider__slide-holder');
 
-var tl = new TimelineMax();
+    var tl = new TimelineMax();
 
-const func = () => {
-    tl.restart(true);
-    // tl.reverse();
-    // tl.play();
+    const func = () => {
+        tl.restart(true);
+        // tl.reverse();
+        // tl.play();
+    }
+    tl.to(slideHolder, 1, {x: "-=100vw", delay: 5, ease: Power1.easeOut}).to(slideHolder, 1, {x: "-=100vw", onComplete: func, delay: .05, ease: Power1.easeOut}, "+=5");
 }
-tl.to(slideHolder, 1, {x: "-=100vw", delay: 5, ease: Power1.easeOut}).to(slideHolder, 1, {x: "-=100vw", onComplete: func, delay: .05, ease: Power1.easeOut}, "+=5");
-
 // .to(slider, 1, {y: 50}).to(slider, 1, {opacity: 0});
 
 // let myAnimation;

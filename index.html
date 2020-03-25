@@ -58,13 +58,22 @@
         </div>
     </div>
     <div class="header">
-        <ul class="header__nav">
-            <li class="header__nav-item"><a href="#" class="header__nav-link">solutions</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">technology</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">investors</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">careers</a></li>
-            <li class="header__nav-item"><a href="#" class="header__nav-link">contact</a></li>
-        </ul>
+        <div class="nav__container">
+            <input id="nav-toggle" type="checkbox" class="nav__input">
+            <label for="nav-toggle" class="nav__toggle">
+                <span class="nav__stripe nav__stripe--0"></span>
+                <span class="nav__stripe nav__stripe--1"></span>
+                <span class="nav__stripe nav__stripe--2"></span>
+                <span class="nav__stripe nav__stripe--3"></span>
+            </label>
+            <ul class="nav">
+                <li class="nav__item"><a href="#" class="nav__link">solutions</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">technology</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">investors</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">careers</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">contact</a></li>
+            </ul>
+        </div>
         <h1 class="header__title">
             <span class="header__main-title">zoom</span>
             <span class="header__sub-title">abhorance with a groove</span>
@@ -179,9 +188,8 @@
         </div>
         <div class="contact__soc-nets">
             <a href="" class="contact__soc-net-link">
-                <svg>
-                    <image xlink:href="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6068cdd0a64ba36e092_Facebook_logo.svg" class="contact__soc-net-img" width="90" height="90"/>  
-                    <!-- <use xlink:href="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6068cdd0a64ba36e092_Facebook_logo.svg" class="contact__soc-net-img"/> -->
+                <svg class="contact__soc-net-img">
+                    <use href="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6068cdd0a64ba36e092_Facebook_logo.svg" />  
                 </svg>
                 <!-- <img src="https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5cecf6068cdd0a64ba36e092_Facebook_logo.svg" alt="" class="contact__soc-net-img"> -->
             </a>
