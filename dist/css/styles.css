@@ -413,35 +413,46 @@ svg {
       -ms-flex-direction: column;
           flex-direction: column;
   color: white;
-  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
 }
 
 .header__main-title {
-  font-size: 11.8rem;
-  text-shadow: 1rem 0.8rem 0 rgba(0, 0, 0, 0.35);
+  font-weight: 900;
+  font-size: 14rem;
   line-height: 1;
 }
 
+@media only screen and (max-width: 25em) {
+  .header__main-title {
+    font-size: 12rem;
+  }
+}
+
 .header__sub-title {
-  background-color: rgba(87, 67, 175, 0.65);
-  text-transform: capitalize;
-  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(76, 59, 153, 0.85);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
   padding: 1rem 2rem;
   word-spacing: .4rem;
-  font-size: 2.5rem;
-  font-weight: 100;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 25em) {
+  .header__sub-title {
+    font-size: 2.2rem;
+  }
 }
 
 .concept {
   position: relative;
   display: grid;
-  padding: 10rem 0 10rem 15rem;
+  padding: 6rem 0 10rem 12rem;
   grid-template-columns: 20vw 1fr;
   grid-template-rows: 3fr .35fr 3fr;
   grid-template-areas: "phone title" "phone stripe" "phone desc";
-  grid-column-gap: 7rem;
+  grid-column-gap: 9rem;
   grid-row-gap: 4rem;
   background-color: ghostwhite;
 }
@@ -449,9 +460,77 @@ svg {
 @media only screen and (max-width: 25em) {
   .concept {
     grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     grid-template-areas: none;
-    padding: 10rem 13%;
+    grid-gap: 6rem;
+    padding: 10rem 7%;
+  }
+}
+
+.concept__title {
+  grid-area: title;
+  font-size: 4rem;
+  color: #5743af;
+  margin-bottom: 2.5rem;
+}
+
+.concept__title > span {
+  display: block;
+}
+
+.concept__title > span:first-child {
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: .25rem;
+  margin-bottom: 2.5rem;
+}
+
+@media only screen and (max-width: 25em) {
+  .concept__title > span:first-child {
+    font-size: 6rem;
+  }
+}
+
+.concept__title > span:nth-child(2),
+.concept__title > span:nth-child(3),
+.concept__title > span:nth-child(5) {
+  font-weight: 700;
+  position: relative;
+}
+
+.concept__title > span:nth-child(2)::after,
+.concept__title > span:nth-child(3)::after,
+.concept__title > span:nth-child(5)::after {
+  position: absolute;
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  left: -2rem;
+  bottom: 0;
+  background: rgba(117, 117, 117, 0.3);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 1rem;
+}
+
+.concept__title > span:not(:first-child) {
+  margin-left: 1rem;
+  padding-left: 1.5rem;
+  line-height: 1;
+  color: rgba(87, 67, 175, 0.8);
+}
+
+.concept__title > span:nth-child(4) {
+  font-weight: 500;
+  color: rgba(87, 67, 175, 0.55);
+}
+
+@media only screen and (max-width: 25em) {
+  .concept__title {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    padding: 0;
   }
 }
 
@@ -516,20 +595,6 @@ svg {
   text-align: center;
 }
 
-.concept__title {
-  font-weight: 700;
-  padding-right: 35%;
-  grid-area: title;
-  font-size: 4rem;
-  color: #5743af;
-}
-
-@media only screen and (max-width: 25em) {
-  .concept__title {
-    grid-row: 1 / 2;
-  }
-}
-
 .concept__stripe {
   margin-left: -20rem;
   padding: .8rem 0;
@@ -565,6 +630,12 @@ svg {
   padding: 10rem 13%;
 }
 
+@media only screen and (max-width: 25em) {
+  .solutions {
+    padding: 10rem 7%;
+  }
+}
+
 .solutions__title {
   font-size: 3.5rem;
   font-weight: 500;
@@ -573,7 +644,7 @@ svg {
   text-transform: uppercase;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 9rem;
 }
 
 @media only screen and (max-width: 25em) {
@@ -680,7 +751,7 @@ svg {
   text-transform: uppercase;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 9rem;
 }
 
 @media only screen and (max-width: 25em) {
@@ -716,7 +787,7 @@ svg {
   text-transform: uppercase;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 9rem;
   font-size: 2.5rem;
 }
 
@@ -732,6 +803,12 @@ svg {
   margin-bottom: 5rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .the-way__graph {
+    margin-bottom: 20rem;
+  }
+}
+
 .the-way__graph-section {
   position: relative;
   display: grid;
@@ -742,10 +819,29 @@ svg {
 
 @media only screen and (max-width: 25em) {
   .the-way__graph-section {
-    grid-template-columns: .8rem 1fr;
-    grid-template-rows: 1fr 1.3fr;
-    grid-column-gap: 8rem;
-    overflow: hidden;
+    grid-template-rows: 5.5fr 2fr 2.3fr;
+    grid-template-columns: 1fr 1rem 1fr;
+    grid-column-gap: 0rem;
+    justify-items: stretch;
+  }
+}
+
+@media only screen and (max-width: 25em) {
+  .the-way__graph-section--2 {
+    position: relative;
+  }
+  .the-way__graph-section--2::before {
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 12rem;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+    background-color: #5743af;
+    border-radius: 0 0 10px 10px;
   }
 }
 
@@ -760,7 +856,13 @@ svg {
 
 @media only screen and (max-width: 25em) {
   .the-way__graph-stage {
-    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    grid-column: 1 / 4;
+    padding: 2rem 1rem 0 1rem;
+    border-left: 1rem solid #5743af;
+    border-right: 1rem solid #5743af;
+    border-top: 1rem solid #5743af;
+    border-radius: 10px 10px 0 0;
   }
 }
 
@@ -770,7 +872,13 @@ svg {
   grid-column: 1 / 2;
   font-size: 30rem;
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.07);
+}
+
+@media only screen and (max-width: 25em) {
+  .the-way__graph-stage-num {
+    font-size: 20rem;
+  }
 }
 
 .the-way__graph-stage-name {
@@ -781,15 +889,22 @@ svg {
   color: rgba(0, 0, 0, 0.65);
 }
 
+@media only screen and (max-width: 25em) {
+  .the-way__graph-stage-name {
+    font-size: 3.2rem;
+  }
+}
+
 .the-way__graph-line {
+  position: relative;
   background-color: #5743af;
   width: 100%;
 }
 
 @media only screen and (max-width: 25em) {
   .the-way__graph-line {
-    grid-row: 1 / 3;
-    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
   }
 }
 
@@ -805,9 +920,8 @@ svg {
   background-color: white;
   background-repeat: no-repeat;
   background-origin: content-box;
-  background-position: -15% 0;
+  background-position: center;
   background-size: contain;
-  box-shadow: inset -2rem 0 3rem -1rem rgba(0, 0, 0, 0.1), inset -3rem 0 3rem -1rem rgba(0, 0, 0, 0.1);
   bottom: 50%;
   border-radius: 100px;
   -webkit-transform: translate(-50%, 50%);
@@ -818,8 +932,10 @@ svg {
 
 @media only screen and (max-width: 25em) {
   .the-way__graph-line::after {
-    border-radius: 0 100px 100px 0;
-    left: 6.5%;
+    border-radius: 10rem;
+    left: 50%;
+    bottom: 0;
+    background-position: 35% 0;
   }
 }
 
@@ -843,6 +959,12 @@ svg {
   background-image: url(https://uploads-ssl.webflow.com/5cdee7ea3f00ece210af284d/5ce2b6d57e30fb8d2b21f2ed_3%403x.svg);
 }
 
+@media only screen and (max-width: 25em) {
+  .the-way__graph-line--2 {
+    border-radius: 0;
+  }
+}
+
 .the-way__graph-chart {
   margin: 5rem 0;
   width: 100%;
@@ -851,8 +973,14 @@ svg {
 
 @media only screen and (max-width: 25em) {
   .the-way__graph-chart {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+    padding: 0 1rem 2rem 1rem;
+    margin: 0;
+    border-left: 1rem solid #5743af;
+    border-right: 1rem solid #5743af;
+    border-bottom: 1rem solid #5743af;
+    border-radius: 0 0 10px 10px;
   }
 }
 
@@ -864,7 +992,7 @@ svg {
   text-transform: uppercase;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 9rem;
   font-size: 2.5rem;
 }
 
@@ -885,7 +1013,7 @@ svg {
 
 @media only screen and (max-width: 25em) {
   .featured {
-    padding: 10rem 13%;
+    padding: 10rem 7%;
   }
 }
 
@@ -897,7 +1025,7 @@ svg {
   text-transform: uppercase;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 9rem;
 }
 
 @media only screen and (max-width: 25em) {
@@ -930,7 +1058,7 @@ svg {
 
 @media only screen and (max-width: 25em) {
   .contact {
-    padding: 10rem 13%;
+    padding: 10rem 7%;
     height: 100vh;
   }
 }
@@ -943,7 +1071,7 @@ svg {
   text-transform: uppercase;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 9rem;
 }
 
 @media only screen and (max-width: 25em) {
